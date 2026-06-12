@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atharv Chavan | Full Stack Developer &amp; Security Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Satoshi:wght@700;900&amp;family=Geist+Mono&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "on-tertiary": "#303033",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#2f3131",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#e4e2e5",
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#636565",
+                        "on-tertiary-container": "#656467",
+                        "tertiary": "#ffffff",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#313030",
+                        "outline-variant": "#444748",
+                        "on-secondary-container": "#b4b5b7",
+                        "on-secondary": "#2f3132",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#8e9192",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131313",
+                        "surface-bright": "#393939",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#454749",
+                        "secondary-fixed": "#e2e2e4",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "tertiary-fixed": "#e4e2e5",
+                        "on-primary-fixed": "#1a1c1c",
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "secondary-container": "#454749",
+                        "on-error": "#690005",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary": "#c6c6c8",
+                        "on-primary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-padding-desktop": "160px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "section-padding-mobile": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Satoshi"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Satoshi"],
+                        "mono-technical": ["Geist Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Satoshi"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "mono-technical": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #131313; cursor: none; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        #custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 12px; height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .card-elevation-1 {
+            background-color: #161618;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.6s ease;
+        }
+        .card-elevation-1:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px);
+            background-color: #1c1c1e;
+        }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-on-scroll { opacity: 0; transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-active { animation: reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        .magnetic-button {
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .timeline-line {
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+            height: 100%;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Performance optimizations for the shader */
+        canvas { touch-action: none; }
+
+        .service-tier-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-tier-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .scroll-indicator {
+            animation: bounce-subtle 2s infinite;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); opacity: 0.3; }
+            50% { transform: translateY(10px); opacity: 1; }
+        }
+
+        /* High-end typography refinement */
+        h1, h2, h3, h4 {
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div id="custom-cursor"></div>
+<!-- Background Shader Integrated -->
+<div class="fixed inset-0 w-full h-full z-[-1] opacity-60">
+    {{DATA:SCREEN:SCREEN_2}}
+</div>
+<nav class="bg-background/40 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/5">
+<div class="flex justify-between items-center px-gutter py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-2xl font-bold text-primary tracking-tighter hover:opacity-70 transition-all duration-500" href="#">Atharv Chavan</a>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-primary font-medium border-b border-primary/50 pb-1 text-sm tracking-wide" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#work">Work</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#contact">Contact</a>
+</div>
+<a class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-caps text-[11px] tracking-widest hover:bg-on-surface transition-all duration-500 active:scale-95 inline-block" href="https://wa.me/917517069901" target="_blank">LET'S TALK</a>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-start px-gutter max-w-container-max mx-auto pt-24">
+<div class="reveal-on-scroll reveal-active">
+<span class="font-label-caps text-[11px] text-on-surface-variant tracking-[0.3em] mb-8 block opacity-60">AVAILABLE FOR GLOBAL PROJECTS</span>
+<h1 class="font-display-lg text-[clamp(64px,12vw,140px)] leading-[0.85] mb-12">
+                Atharv<br/>Chavan
+            </h1>
+<p class="font-headline-md text-2xl md:text-3xl text-on-surface-variant mb-8 max-w-2xl font-medium">
+                Full Stack Developer • Mobile Engineer • Cyber Security Specialist
+            </p>
+<p class="font-body-lg text-lg text-on-surface-variant/60 mb-16 max-w-xl leading-relaxed">
+                Engineering high-fidelity digital experiences with a focus on structural security, performance, and elite aesthetics. Based in India, operating globally.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="magnetic-button bg-primary text-background px-12 py-6 rounded-full font-label-caps text-[11px] tracking-widest flex items-center justify-center gap-3 group overflow-hidden" href="#work">
+                    VIEW SELECTED WORKS
+                    <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform duration-500">arrow_forward</span>
+</a>
+<a class="magnetic-button border border-white/10 text-primary px-12 py-6 rounded-full font-label-caps text-[11px] tracking-widest flex items-center justify-center gap-2 hover:bg-white/5 transition-all duration-500" href="#contact">
+                    GET IN TOUCH
+                </a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 scroll-indicator opacity-30">
+<span class="font-mono-technical text-[10px] uppercase tracking-widest">Scroll</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding-desktop px-gutter max-w-container-max mx-auto" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-32 items-start">
+<div class="reveal-on-scroll">
+<h2 class="font-label-caps text-[11px] text-on-surface-variant mb-12 tracking-[0.2em] opacity-50 uppercase">The Philosophy</h2>
+<p class="font-headline-md text-4xl md:text-5xl leading-tight mb-12 font-semibold">
+                    Bridging the gap between complex engineering and refined interfaces.
+                </p>
+<div class="flex gap-20 mt-16">
+<div>
+<span class="font-display-lg text-6xl block mb-2">9+</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase opacity-60">Elite Deployments</span>
+</div>
+<div>
+<span class="font-display-lg text-6xl block mb-2">100%</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase opacity-60">Success Rate</span>
+</div>
+</div>
+</div>
+<div class="reveal-on-scroll">
+<h2 class="font-label-caps text-[11px] text-on-surface-variant mb-12 tracking-[0.2em] opacity-50 uppercase">Chronology</h2>
+<div class="relative pl-10">
+<div class="absolute left-0 top-0 timeline-line"></div>
+<div class="mb-16 relative">
+<div class="absolute -left-[45px] top-1.5 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+<div class="flex flex-col mb-3">
+<h3 class="font-body-lg text-xl font-bold">Lead Full Stack Developer</h3>
+<span class="font-mono-technical text-[12px] text-on-surface-variant opacity-60">2022 — PRESENT</span>
+</div>
+<p class="text-on-surface-variant/70 font-body-md leading-relaxed">Architecting scalable mobile applications and secure web infrastructures for high-growth global startups.</p>
+</div>
+<div class="mb-16 relative">
+<div class="absolute -left-[45px] top-1.5 w-2 h-2 bg-white/20 rounded-full"></div>
+<div class="flex flex-col mb-3">
+<h3 class="font-body-lg text-xl font-bold">Cyber Security Analyst</h3>
+<span class="font-mono-technical text-[12px] text-on-surface-variant opacity-60">2021 — 2022</span>
+</div>
+<p class="text-on-surface-variant/70 font-body-md leading-relaxed">Conducted intensive penetration testing and vulnerability assessments to safeguard enterprise data assets.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[45px] top-1.5 w-2 h-2 bg-white/20 rounded-full"></div>
+<div class="flex flex-col mb-3">
+<h3 class="font-body-lg text-xl font-bold">Web Specialist</h3>
+<span class="font-mono-technical text-[12px] text-on-surface-variant opacity-60">2020 — 2021</span>
+</div>
+<p class="text-on-surface-variant/70 font-body-md leading-relaxed">Delivered bespoke UI/UX solutions and high-performance React applications for boutique agencies.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Arsenal -->
+<section class="py-section-padding-desktop bg-white/[0.01] border-y border-white/[0.03]">
+<div class="px-gutter max-w-container-max mx-auto">
+<h2 class="font-label-caps text-[11px] text-on-surface-variant mb-20 text-center tracking-[0.3em] opacity-40 uppercase">Technical Arsenal</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">html</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">HTML/CSS</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Semantic / BEM / SCSS</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">javascript</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">JavaScript</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">ES6+ / TypeScript</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">code</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">React / Next</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">MERN / GSAP / 3D</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">terminal</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">Python</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Django / FastAPI</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">smartphone</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">Flutter</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">iOS / Android Native</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">security</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">Cyber Security</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Penetration / OAuth</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">brush</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">UI/UX</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Figma / Prototyping</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">database</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">Databases</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Postgres / MongoDB</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">cloud</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">DevOps</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Docker / AWS / CI-CD</p>
+</div>
+<div class="card-elevation-1 p-10 text-center group cursor-default">
+<span class="material-symbols-outlined mb-6 text-4xl group-hover:scale-110 transition-transform duration-700">token</span>
+<h4 class="font-body-lg font-bold text-sm tracking-widest mb-3 uppercase">Backend</h4>
+<p class="font-mono-technical text-[10px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 uppercase">Microservices / API</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-section-padding-desktop px-gutter max-w-container-max mx-auto" id="work">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-24 reveal-on-scroll">
+<div class="max-w-2xl">
+<h2 class="font-label-caps text-[11px] text-on-surface-variant mb-6 tracking-[0.3em] opacity-40 uppercase">Selected Works</h2>
+<h3 class="font-display-lg text-5xl md:text-7xl leading-tight">Elite Digital Case Studies</h3>
+</div>
+<div class="font-mono-technical text-[10px] text-on-surface-variant uppercase tracking-[0.2em] opacity-40 mt-8 md:mt-0">
+                (Scroll to traverse)
+            </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Case Study 1 -->
+<div class="group reveal-on-scroll">
+<div class="aspect-[16/10] bg-surface-container-high overflow-hidden relative mb-8 border border-white/[0.05]">
+<img alt="Fintech Dashboard" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDilN0xTfc10-mxNRIhEfoYe08WHmbxRXG6U0phXL5K1GPrVSYFQyPg0rUMJ1NxVSR39r3xY1tuu_kydP9bKTd9dGYG5BQG-7taV7wcg5gvTIMsP4WM0DYAbpqcmHOUtbISzgJppSZGwNLFktYlXdgY4qAhUZtZNMeTzU8qOj
